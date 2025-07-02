@@ -79,13 +79,6 @@ This section details the automated deployment and operational aspects of the cha
 
 Beyond the specific components mentioned above for developing and deploying, here are overarching security and other General components used in the demo and the final solution:
 
-* **Identity and Access Management (IAM):**
-    * Implemented the **Principle of Least Privilege (PoLP)**: Granting only the necessary permissions to users and service accounts for each resource.
-    * Use **Service Accounts** for inter-service communication (e.g., Cloud Run accessing BigQuery, Cloud Storage, Gemini).
-    * Leverage **IAM Conditions** for more granular access control.
-    * Regularly **audit IAM policies**.
-
-
 * **Identity and Access Management (IAM)**
     * The **Principle of Least Privilege (PoLP)** is rigorously applied, granting only the essential permissions to users and service accounts for each resource. **Service Accounts** are exclusively used for inter-service communication (e.g., Cloud Run accessing BigQuery, Cloud Storage, Gemini). **IAM Conditions** are leveraged to achieve highly granular access control, and **IAM policies** are regularly audited.
 * **Networking**
@@ -100,10 +93,10 @@ Beyond the specific components mentioned above for developing and deploying, her
     * The architecture is designed for **multi-region deployment** or at least multi-zone within a region for critical components to enhance availability. **Backup and recovery strategies** are implemented for data in BigQuery and Cloud Storage.
 * **Responsible AI**
     * For the Gemini model, **responsible AI best practices** are integrated, including:
-* **Bias detection and mitigation:** Model outputs are continuously evaluated for fairness.
-* **Safety filters:** Responses are ensured to be free of harmful, unethical, or illegal content.
-* **Transparency and explainability:** Where possible, clarity is provided on how the chatbot arrived at an answer.
-* **Human oversight:** Mechanisms are in place for human review of challenging or critical responses.
+        * **Bias detection and mitigation:** Model outputs are continuously evaluated for fairness.
+        * **Safety filters:** Responses are ensured to be free of harmful, unethical, or illegal content.
+        * **Transparency and explainability:** Where possible, clarity is provided on how the chatbot arrived at an answer.
+        * **Human oversight:** Mechanisms are in place for human review of challenging or critical responses.
 * **Compliance**
     * Given the judicial context, compliance with relevant data privacy regulations (e.g., **LGPD in Brazil, GDPR in Europe**) and industry-specific legal requirements is ensured. GCP's various compliance certifications are leveraged.
 
