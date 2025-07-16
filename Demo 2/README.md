@@ -84,13 +84,11 @@ Beyond the specific components mentioned above for developing and deploying, her
 * **Networking**
     * **VPC Service Controls** establish security perimeters around sensitive data and services like BigQuery, Cloud Storage, and Vertex AI, effectively preventing data exfiltration. **Private Service Connect** or **VPC Access Connector** is configured for private communication between services where public internet exposure is not required (e.g., Cloud Run to BigQuery). **Firewall Rules** are implemented to restrict network access as needed.
 * **Data Security**
-    * Encryption at Rest and in Transit** is enabled by default for all data in Cloud Storage and BigQuery. Customer-Managed Encryption Keys (CMEK) are used for additional control over encryption keys for highly sensitive judicial data. The **Data Loss Prevention (DLP) API** scans judicial documents for sensitive information, redacting or tokenizing it before storage or processing when necessary. **Data Masking/Tokenization** is applied to sensitive PII within BigQuery.
+    * Encryption at Rest and in Transit** is enabled by default for all data in Cloud Storage and BigQuery.
 * **Observability (Monitoring, Logging, Tracing)**
     * **Cloud Monitoring** dashboards and alerts are configured for service health, performance, and resource utilization (e.g., Cloud Run latency, BigQuery query performance, Vertex AI model usage). **Cloud Logging** centralizes all application and infrastructure logs for debugging, auditing, and security analysis. **Cloud Trace** is utilized to understand latency and execution flow across distributed services.
 * **Cost Management**
-    * Serverless services (Cloud Run, Cloud Build, BigQuery, Vertex AI) are leveraged for their pay-per-use billing model, optimizing costs. **Billing alerts** are set up, and spending is continuously monitored. **Resource quotas** are implemented to prevent unexpected cost spikes.
-* **Reliability and Disaster Recovery**
-    * The architecture is designed for **multi-region deployment** or at least multi-zone within a region for critical components to enhance availability. **Backup and recovery strategies** are implemented for data in BigQuery and Cloud Storage.
+    * Serverless services (Cloud Run, Cloud Build, BigQuery, Vertex AI) are leveraged for their pay-per-use billing model, optimizing costs. **Billing alerts** are set up, and spending is continuously monitored. 
 * **Responsible AI**
     * For the Gemini model, **responsible AI best practices** are integrated, including:
         * **Bias detection and mitigation:** Model outputs are continuously evaluated for fairness.
@@ -98,7 +96,7 @@ Beyond the specific components mentioned above for developing and deploying, her
         * **Transparency and explainability:** Where possible, clarity is provided on how the chatbot arrived at an answer.
         * **Human oversight:** Mechanisms are in place for human review of challenging or critical responses.
 * **Compliance**
-    * Given the judicial context, compliance with relevant data privacy regulations (e.g., **LGPD in Brazil, GDPR in Europe**) and industry-specific legal requirements is ensured. GCP's various compliance certifications are leveraged.
+    * Given the judicial context, compliance with relevant data privacy regulations (e.g., **LGPD in Brazil, GDPR in Europe**) and industry-specific legal requirements is ensured.
 
 This architecture provides a robust, scalable, and secure foundation for a sophisticated judicial chatbot, adhering to modern cloud development and operational principles.
 
