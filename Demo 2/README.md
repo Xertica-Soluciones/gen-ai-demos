@@ -1,4 +1,4 @@
-# Demo 2 - Conversational Agent for Judicial Processes on Google Cloud Platform (EM DESENVOLVIMENTO)
+# Demo 2 - Conversational Agent for Judicial Processes on Google Cloud Platform
 
 The Conversational Agent described in this Demo examplifies the Conversational Agent currently in production in the platform developed by Xertica.ai to the Public Ministry of Rio Grande do Sul. Due to the nature of the work in a Public Ministry, dealing with confidential legal processings, the exact content of the codes and data cannot be shared.
 
