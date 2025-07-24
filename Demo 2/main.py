@@ -173,7 +173,7 @@ def main():
 
     # Define HTTP headers for the response
     headers = {'Content-Type': 'application/json'}
-    print(f"Analysing question: {question} for process number {process_number}")
+    print(f"Analyzing question: {question} for process number {process_number}")
     # Get the answer from the LLM based on the question and document
     llm_answer = answer_with_llm(question, process_number)
 
