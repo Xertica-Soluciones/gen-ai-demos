@@ -74,7 +74,6 @@ def get_document_uri(process_number: int) -> str:
     bq_query = f"""
         SELECT gcs_uri FROM `{PROJECT_ID}.{DATASET}.{TABLE}` WHERE id = {process_number};
     """
-    print(f"Executing BigQuery query: {bq_query}")
 
     try:
         # Execute the BigQuery query using pandas_gbq
@@ -174,7 +173,7 @@ def main():
 
     # Define HTTP headers for the response
     headers = {'Content-Type': 'application/json'}
-
+    print(f"Analysing question: {question} for process number {process_number}")
     # Get the answer from the LLM based on the question and document
     llm_answer = answer_with_llm(question, process_number)
 
@@ -183,7 +182,7 @@ def main():
 
     # Prepare the final response dictionary.
     # The 'response' object imported from 'response_format' is used as template.
-    response["fulfillment_response"]["messages"] = llm_answer
+    response["fulfillment_response"]["messages"][0]["text"]["text"][0] = llm_answer
 
     # Return the structured response, HTTP status code 200 (OK), and headers
     return (response, 200, headers)
