@@ -11,7 +11,6 @@ The following architecture diagram ilustrates the principal Google Cloud Platfor
 
 ![Conversational Agent for Judicial Processes](img/architecture.png)
 
-
 The infrastructure is divided into three main environments: **Development**, **Production**, and **Security and General**, each listed below with their components and **Good Practices** used to choose, design, and deploy the solution using these components.
 
 ## Development Environment (Green Box)
