@@ -1,0 +1,4 @@
+google-cloud-storage
+vertexai
+flask
+pandas_gbq
