@@ -5,7 +5,7 @@ The SARIMA forecasting model described in this architecture aims to **predict th
 The following architecture diagram illustrates the main Google Cloud Platform (GCP) systems and components used to develop, deploy, and operate the time series forecasting solution.
 
 **Architecture Diagram:**
-![Sarima Model](img/architecture.png)
+![Sarima Model](img/architecture.jpg)
 
 The infrastructure is divided into three main environments: **Development**, **Production**, and **Security and General**, each listed below with its components and the **Good Practices** used.
 
