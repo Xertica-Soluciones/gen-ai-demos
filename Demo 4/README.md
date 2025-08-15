@@ -1,4 +1,4 @@
-## Demo 4 - MPRS Process Forecasting with SARIMA
+## Demo 4 - SARIMA-Powered Intelligent Process Forecaster for MPRS
 
 This project demonstrates a time-series forecasting solution using a SARIMA model, packaged and deployed on the Google Cloud Platform (GCP) to serve online predictions.
 
