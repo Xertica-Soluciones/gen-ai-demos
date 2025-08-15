@@ -1,6 +1,10 @@
-## Demo 4 - SARIMA Model for Time Series Forecasting on GCP
+## Demo 4 - MPRS Process Forecasting with SARIMA
 
-The SARIMA forecasting model described in this architecture aims to **predict the daily number of taxi rides in the city of Chicago, based on historical data, using a time series model with weekly seasonality**. The solution uses time series data stored and pre-processed in BigQuery, and packages the inference code and dependencies into a custom container, which is then deployed on Vertex AI to serve online predictions in a scalable and reliable manner.
+This project demonstrates a time-series forecasting solution using a SARIMA model, packaged and deployed on the Google Cloud Platform (GCP) to serve online predictions.
+
+The demo uses Chicago taxi trip data to illustrate the development and deployment process. However, the workflow presented is a direct replication of what is being implemented in production for the Public Prosecutor's Office of Rio Grande do Sul (MPRS).
+
+MPRS's main need is to forecast the daily number of new legal processes the agency will receive. The time-series forecasting solution, as demonstrated in the Chicago taxi scenario, allows MPRS to optimize resource planning and allocation, ensuring teams are prepared for the expected workload.
 
 The following architecture diagram illustrates the main Google Cloud Platform (GCP) systems and components used to develop, deploy, and operate the time series forecasting solution.
 
