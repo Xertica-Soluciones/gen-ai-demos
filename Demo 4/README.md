@@ -4,7 +4,7 @@ This project demonstrates a time-series forecasting solution using a SARIMA mode
 
 The demo uses Chicago taxi trip data to illustrate the development and deployment process. However, the workflow presented is a direct replication of what is being implemented in production for the Public Prosecutor's Office of Rio Grande do Sul (MPRS).
 
-MPRS's main need is to forecast the daily number of new legal processes the agency will receive. The time-series forecasting solution, as demonstrated in the Chicago taxi scenario, allows MPRS to optimize resource planning and allocation, ensuring teams are prepared for the expected workload.
+The MPRS’s and Xertica.ai' primary objective is to proactively forecast the daily influx of new legal processes and related files. By leveraging a time-series forecasting solution, similar to the approach demonstrated in the Chicago taxi scenario, MPRS can optimize both infrastructure on Google Cloud Platform (GCP) and the allocation of human resources, ensuring teams are prepared to handle the anticipated workload efficiently while generating strategic insights from decentralized legal data sources.
 
 The following architecture diagram illustrates the main Google Cloud Platform (GCP) systems and components used to develop, deploy, and operate the time series forecasting solution.
 
