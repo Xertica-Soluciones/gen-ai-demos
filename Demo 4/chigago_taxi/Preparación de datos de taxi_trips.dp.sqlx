@@ -1,0 +1,36 @@
+config {
+  "type": "dataPreparation",
+  "project": "br-pruebadeconcepto-cld-01",
+  "dataset": "mprs",
+  "name": "teste_transf_chicagotaxi"
+}
+FROM `bigquery-public-data`.`chicago_taxi_trips`.`taxi_trips`
+-- If column trip_seconds is greater than zero.
+|> WHERE trip_seconds > 0
+-- criar a coluna trip_date do tipo date , pegando apenas a data da coluna trip_start_timestamp que é uma datetime
+|> EXTEND DATE(trip_start_timestamp) AS `trip_date`
+|> SELECT
+  CAST(`unique_key` AS STRING) AS `unique_key`,
+  CAST(`taxi_id` AS STRING) AS `taxi_id`,
+  CAST(`trip_start_timestamp` AS TIMESTAMP) AS `trip_start_timestamp`,
+  CAST(`trip_end_timestamp` AS TIMESTAMP) AS `trip_end_timestamp`,
+  CAST(`trip_seconds` AS INT64) AS `trip_seconds`,
+  CAST(`trip_miles` AS FLOAT64) AS `trip_miles`,
+  CAST(`pickup_census_tract` AS INT64) AS `pickup_census_tract`,
+  CAST(`dropoff_census_tract` AS INT64) AS `dropoff_census_tract`,
+  CAST(`pickup_community_area` AS INT64) AS `pickup_community_area`,
+  CAST(`dropoff_community_area` AS INT64) AS `dropoff_community_area`,
+  CAST(`fare` AS FLOAT64) AS `fare`,
+  CAST(`tips` AS FLOAT64) AS `tips`,
+  CAST(`tolls` AS FLOAT64) AS `tolls`,
+  CAST(`extras` AS FLOAT64) AS `extras`,
+  CAST(`trip_total` AS FLOAT64) AS `trip_total`,
+  CAST(`payment_type` AS STRING) AS `payment_type`,
+  CAST(`company` AS STRING) AS `company`,
+  CAST(`pickup_latitude` AS FLOAT64) AS `pickup_latitude`,
+  CAST(`pickup_longitude` AS FLOAT64) AS `pickup_longitude`,
+  CAST(`pickup_location` AS STRING) AS `pickup_location`,
+  CAST(`dropoff_latitude` AS FLOAT64) AS `dropoff_latitude`,
+  CAST(`dropoff_longitude` AS FLOAT64) AS `dropoff_longitude`,
+  CAST(`dropoff_location` AS STRING) AS `dropoff_location`,
+  CAST(`trip_date` AS DATE) AS `trip_date`

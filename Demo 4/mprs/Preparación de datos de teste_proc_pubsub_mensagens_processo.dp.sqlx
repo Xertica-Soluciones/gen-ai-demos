@@ -1,0 +1,21 @@
+config {
+  "type": "dataPreparation",
+  "project": "br-pruebadeconcepto-cld-01",
+  "dataset": "mprs",
+  "name": "teste_proc_pubsub_mensagens_processo_preparada"
+}
+FROM `br-pruebadeconcepto-cld-01`.`mprs`.`teste_proc_pubsub_mensagens_processo`
+-- 
+|> WHERE id is not null
+-- 
+|> WHERE numero_processo is not null
+-- Converts column data from type string to date with the following format(s): '%d/%m/%Y'
+|> SET `data` = COALESCE(SAFE.PARSE_DATE('%d/%m/%Y', data))
+|> SELECT
+  CAST(`id` AS INT64) AS `id`,
+  CAST(`numero_processo` AS STRING) AS `numero_processo`,
+  CAST(`identificador_movimento` AS STRING) AS `identificador_movimento`,
+  CAST(`data` AS DATE) AS `data`,
+  CAST(`processado` AS INT64) AS `processado`,
+  CAST(`grupos_trabalho` AS STRING) AS `grupos_trabalho`,
+  CAST(`data_processado` AS DATETIME) AS `data_processado`
